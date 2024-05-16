@@ -38,11 +38,12 @@
 # Specifying the folder name followed by / has the same effect.
 # 01 Documentation/ has the same effect as **/Documentation
 
-# Visual Studio user specific files
+# Visual Studio user specific files, works with nested projects.
 .vs/
 
-# Visual Studio Code user specific files
+# Visual Studio Code user specific files, works with nested projects.
 .vscode/
 
+# Documentation, works with nested projects.
 01 Documentation/
 build*/
