@@ -47,3 +47,6 @@
 # Documentation, works with nested projects.
 01 Documentation/
 build*/
+
+# Friday 17th May 2024 - Added MacOS specific exclusion for DS_Store
+.DS_Store
