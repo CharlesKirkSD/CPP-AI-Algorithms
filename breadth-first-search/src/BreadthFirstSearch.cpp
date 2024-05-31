@@ -10,3 +10,8 @@ void BreadthFirstSearch::traverse()
 {
     
 }
+
+void BreadthFirstSearch::traverse(Vertex& vertex)
+{
+    
+}
