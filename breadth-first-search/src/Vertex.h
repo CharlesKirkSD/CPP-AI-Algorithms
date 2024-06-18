@@ -1,3 +1,7 @@
+#ifndef VERTEX_H
+#define VERTEX_H
+
+
 #include <string>
 #include <list>
 
@@ -19,14 +23,20 @@ public:
     /// @brief Check if the Vertex is visited.
     bool visited() const;
 
+    /// @brief Get the list of adjacent vertices.
+    std::list<Vertex*> getAdjacencyList() const;
+
     /// @brief Add an adjacent Vertex to the front of the list of adjacent vertices.
-    void addAdjacentVertex(const Vertex& vertex);
+    void addAdjacentVertex(Vertex* vertex);
 
     /// @brief Check if two Vertices are equal.
-    bool equals(const Vertex& a, const Vertex& b);
+    bool equals(const Vertex* a, const Vertex* b);
 
     /// @brief Print the details of the Vertex to the console.
     void toString() const;
+
+    /// @brief Print a single line of information about the vertex that was visited.
+    void toStringVisited() const;
 
 private:
     /// @brief The name of the Vertex.
@@ -36,5 +46,8 @@ private:
     bool m_visited = false;
 
     /// @brief The list of adjacent vertices.
-    std::list<Vertex> m_adjacentVertices;
+    std::list<Vertex*> m_adjacentVertices;
 };
+
+
+#endif

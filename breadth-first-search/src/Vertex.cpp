@@ -21,7 +21,12 @@ bool Vertex::visited() const
     return m_visited;
 }
 
-void Vertex::addAdjacentVertex(const Vertex& vertex)
+std::list<Vertex*> Vertex::getAdjacencyList() const
+{
+    return m_adjacentVertices;
+}
+
+void Vertex::addAdjacentVertex(Vertex* vertex)
 {
     m_adjacentVertices.push_front(vertex);
 
@@ -29,9 +34,9 @@ void Vertex::addAdjacentVertex(const Vertex& vertex)
     m_adjacentVertices.unique(std::bind(&Vertex::equals, this, std::placeholders::_1, std::placeholders::_2));
 }
 
-bool Vertex::equals(const Vertex& a, const Vertex& b)
+bool Vertex::equals(const Vertex* a, const Vertex* b)
 {
-    return a.m_name == b.m_name;
+    return a->m_name == b->m_name;
 }
 
 void Vertex::toString() const
@@ -40,8 +45,14 @@ void Vertex::toString() const
     std::cout << std::boolalpha << "--- Vertex details ---\n" << "Vertex name: " << m_name << "\nVisited: " << visited() << std::endl;
     
     // Output the list of adjacent vertices
-    for (Vertex v: m_adjacentVertices)
+    for (Vertex* v: m_adjacentVertices)
     {
-        std::cout << "Adjacent vertex: " << v.m_name << std::endl;
+        std::cout << "Adjacent vertex: " << v->m_name << std::endl;
     }
 }
+
+void Vertex::toStringVisited() const
+{
+    std::cout << "Vertex visited: " << m_name << std::endl;
+}
+

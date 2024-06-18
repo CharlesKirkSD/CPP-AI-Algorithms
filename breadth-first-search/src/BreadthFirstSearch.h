@@ -1,3 +1,7 @@
+#ifndef BREADTH_FIRST_SEARCH_H
+#define BREADTH_FIRST_SEARCH_H
+
+
 #include "Vertex.h"
 
 /// @brief Implementation of the Breadth-First Search algorithm
@@ -21,3 +25,6 @@ void traverse(Vertex& vertex);
 private:
     Vertex* m_rootVertex = nullptr;
 };
+
+
+#endif
