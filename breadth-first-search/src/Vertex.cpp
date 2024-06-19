@@ -28,7 +28,7 @@ std::list<Vertex*> Vertex::getAdjacencyList() const
 
 void Vertex::addAdjacentVertex(Vertex* vertex)
 {
-    m_adjacentVertices.push_front(vertex);
+    m_adjacentVertices.push_back(vertex);
 
     // Remove duplicates from the list, passing the member function equals() to the unique() function with std::bind.
     m_adjacentVertices.unique(std::bind(&Vertex::equals, this, std::placeholders::_1, std::placeholders::_2));
