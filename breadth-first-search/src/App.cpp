@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
     a.addAdjacentVertex(&b);
     a.addAdjacentVertex(&f);
     a.addAdjacentVertex(&g);
-    // a.addAdjacentVertex(&b);    // Additional entry to test the effect of duplicate entries in the list.
+    a.addAdjacentVertex(&b);    // Additional entry to test the effect of duplicate entries in the list.
 
     b.addAdjacentVertex(&a);
     b.addAdjacentVertex(&c);
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
     d.addAdjacentVertex(&b);
     d.addAdjacentVertex(&e);
 
-    // e.addAdjacentVertex(&d);
+    e.addAdjacentVertex(&d);
 
     f.addAdjacentVertex(&a);
 

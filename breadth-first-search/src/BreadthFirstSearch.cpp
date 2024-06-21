@@ -8,6 +8,10 @@ BreadthFirstSearch::BreadthFirstSearch(Vertex* rootVertex)
 
 void BreadthFirstSearch::traverse()
 {
+    // If the root vertex was not set when the object was constructed then return.
+    if (m_rootVertex == nullptr) {
+        return;
+    }
     traverse(*m_rootVertex);
 }
 

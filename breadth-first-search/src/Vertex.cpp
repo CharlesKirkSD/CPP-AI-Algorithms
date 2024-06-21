@@ -28,10 +28,14 @@ std::list<Vertex*> Vertex::getAdjacencyList() const
 
 void Vertex::addAdjacentVertex(Vertex* vertex)
 {
-    m_adjacentVertices.push_back(vertex);
+    // Test whether the vertex is already in the list, if it is then return.
+    for (Vertex* v: m_adjacentVertices) {
+        if (vertex == v) {
+            return;
+        }
+    }
 
-    // Remove duplicates from the list, passing the member function equals() to the unique() function with std::bind.
-    m_adjacentVertices.unique(std::bind(&Vertex::equals, this, std::placeholders::_1, std::placeholders::_2));
+    m_adjacentVertices.push_back(vertex);
 }
 
 bool Vertex::equals(const Vertex* a, const Vertex* b)
